@@ -8,11 +8,6 @@ import { IdContext } from './contexts/id.context';
 export const App = () => {
     const [id, setId] = useState('');
 
-
-    // const checkDate=(e)=> {
-    //     console.log(new Date(e.target.value));
-    // }
-
     return (
       <IdContext.Provider value={{id, setId}}>
           <Header/>

@@ -152,7 +152,7 @@ export const TransactionForm = ()=>{
         return (
             <>
                 <h2>
-                    Twoje ogłoszenie zostało poprawnie dodane do serwisu pod
+                    Twoje transakcja została poprawnie dodane do serwisu pod
                     ID: {newId}.
                 </h2>
                 <button onClick={confirm}>OK</button>

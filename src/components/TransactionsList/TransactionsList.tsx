@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {apiUrl} from "../../config/api";
 import {TransactionEntity} from 'types';
 import {SingleTransaction} from "./SingleTransaction";
+import "./TransactionsList.css";
 
 export const TransactionsList = () => {
     const [loading, setLoading] = useState(true);
@@ -29,7 +30,7 @@ export const TransactionsList = () => {
 
     return (
         <>
-            <h1>Transakcje</h1>
+            <h1 className={"header"}>Transakcje</h1>
             {
                 transactions.map(transaction=>(
                     <SingleTransaction key={transaction.id} data={transaction}/>
