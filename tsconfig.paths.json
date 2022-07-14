@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.paths.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "types": [
+        "../household-budget-back/types"
+      ]
+    }
+  }
+}
