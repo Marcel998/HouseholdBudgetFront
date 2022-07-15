@@ -24,19 +24,20 @@ export const TransactionsList = () => {
     },[]);
 
     if (loading) {
-        return <h2>Trwa pobieranie transakcji...</h2>;
+        return <h2 className="transactionForm">Trwa pobieranie transakcji...</h2>;
     }
 
 
     return (
-        <>
+        <div className="transactionsList">
+
             <h1 className={"header"}>Transakcje</h1>
             {
                 transactions.map(transaction=>(
                     <SingleTransaction key={transaction.id} data={transaction}/>
                 ))
             }
-        </>
+        </div>
     )
 }
 

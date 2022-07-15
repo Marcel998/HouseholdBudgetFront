@@ -1,0 +1,9 @@
+h1.header {
+    margin: 20px 0;
+}
+
+.transactionsList{
+    padding: 0 30px;
+    max-width: 600px;
+    margin: auto;
+}

@@ -2,6 +2,7 @@ import {Btn} from "../common/Btn";
 import {SyntheticEvent, useContext, useEffect, useState} from "react";
 import {apiUrl} from "../../config/api";
 import {IdContext} from "../../contexts/id.context";
+import "./TransactionForm.css";
 
 export const TransactionForm = ()=>{
     const {id:idContext, setId: setIdContext} = useContext(IdContext);
@@ -173,6 +174,7 @@ export const TransactionForm = ()=>{
 
 
     return (
+        <div className="transactionForm">
         <form onSubmit={saveTransaction} >
 
             <p>
@@ -217,5 +219,6 @@ export const TransactionForm = ()=>{
 
             <Btn text={form.id? "Zaktualizuj" : "Zapisz"}/>
         </form>
+        </div>
     )
 }

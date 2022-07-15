@@ -1,0 +1,10 @@
+.transactionForm{
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    padding: 12px 30px;
+}
+
+form input, form select, form textarea, button{
+    width: 100%;
+}

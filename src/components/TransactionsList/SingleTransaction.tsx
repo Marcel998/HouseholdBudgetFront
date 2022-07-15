@@ -24,9 +24,11 @@ export const SingleTransaction = (props: Props)=>{
     return <div className="transaction">
         <h2>{new Date(data.date).toISOString().split('T')[0]}</h2>
         <p>{data.description}</p>
-        {data.operation === "expense" ? <p><b>-{data.amount} zł</b></p> : <p><b>+{data.amount} zł</b></p>}
-        <p>{data.operation}</p>
-        <button onClick={setIdFromLocalState} >Edytuj</button>
+        <div className="amount">
+            {data.operation === "expense" ? <p className="expense"><b>-{data.amount} zł</b></p> : <p><b>+{data.amount} zł</b></p>}
+        </div>
+        {/*<p>{data.operation}</p>*/}
+        <button onClick={setIdFromLocalState}>Edytuj</button>
         {/*<hr/>*/}
     </div>
 }
