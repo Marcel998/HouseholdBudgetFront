@@ -4,14 +4,10 @@ import {TransactionForm} from "./components/transactionForm/TransactionForm";
 import {TransactionsList} from "./components/TransactionsList/TransactionsList";
 import {Header} from "./components/layout/Header";
 import { IdContext } from './contexts/id.context';
+import "./App.css";
 
 export const App = () => {
     const [id, setId] = useState('');
-
-
-    // const checkDate=(e)=> {
-    //     console.log(new Date(e.target.value));
-    // }
 
     return (
       <IdContext.Provider value={{id, setId}}>

@@ -1,9 +1,17 @@
+
 header{
+    /*margin: auto;*/
     background: #6200EE;
-    padding: 12px;
+}
+
+.headerWrapper{
+    max-width: 600px;
+    margin: auto;
+    padding: 12px 30px;
     color: white;
     display: flex;
     justify-content: space-between;
+
 }
 
 header h1{

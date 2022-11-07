@@ -2,6 +2,7 @@ import { TransactionEntity } from "types";
 import React, {SyntheticEvent, useContext} from "react";
 import {IdContext} from "../../contexts/id.context";
 import {useNavigate} from "react-router-dom";
+import "./SingleTransaction.css";
 
 interface Props {
     data: TransactionEntity;
@@ -9,7 +10,7 @@ interface Props {
 
 
 export const SingleTransaction = (props: Props)=>{
-    const {id, setId} = useContext(IdContext);
+    const {setId} = useContext(IdContext);
     const navigate = useNavigate();
 
     const {data} = props;
@@ -20,12 +21,14 @@ export const SingleTransaction = (props: Props)=>{
         navigate("/transaction");
     }
 
-    return <>
+    return <div className="transaction">
         <h2>{new Date(data.date).toISOString().split('T')[0]}</h2>
         <p>{data.description}</p>
-        {data.operation === "expense" ? <p><b>-{data.amount} zł</b></p> : <p><b>+{data.amount} zł</b></p>}
-        <p>{data.operation}</p>
-        <button onClick={setIdFromLocalState} >Edytuj</button>
-        <hr/>
-    </>
+        <div className="amount">
+            {data.operation === "expense" ? <p className="expense"><b>-{data.amount} zł</b></p> : <p><b>+{data.amount} zł</b></p>}
+        </div>
+        {/*<p>{data.operation}</p>*/}
+        <button onClick={setIdFromLocalState}>Edytuj</button>
+        {/*<hr/>*/}
+    </div>
 }

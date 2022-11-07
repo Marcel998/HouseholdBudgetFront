@@ -9,12 +9,14 @@ export const Header = () => {
 
     return (
         <header>
-            <h1>
-                <Link className="logo" to="/">
-                    <strong>Budżet </strong>Domowy
-                </Link>
-            </h1>
-            {location.pathname === "/transaction" ? null : <Btn to="/transaction" text="Dodaj transakcję"/>}
+            <div className="headerWrapper">
+                <h1>
+                    <Link className="logo" to="/">
+                        <strong>Budżet </strong>Domowy
+                    </Link>
+                </h1>
+                {location.pathname === "/transaction" ? null : <Btn to="/transaction" text="Dodaj transakcję"/>}
+            </div>
         </header>
     );
 };

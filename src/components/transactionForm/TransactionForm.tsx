@@ -2,6 +2,7 @@ import {Btn} from "../common/Btn";
 import {SyntheticEvent, useContext, useEffect, useState} from "react";
 import {apiUrl} from "../../config/api";
 import {IdContext} from "../../contexts/id.context";
+import "./TransactionForm.css";
 
 export const TransactionForm = ()=>{
     const {id:idContext, setId: setIdContext} = useContext(IdContext);
@@ -145,34 +146,34 @@ export const TransactionForm = ()=>{
     }
 
     if (loading) {
-        return <h2>Proszę czekać...</h2>;
+        return <h2 className="transactionForm">Proszę czekać...</h2>;
     }
 
     if (newId) {
         return (
-            <>
+            <div className="transactionForm">
                 <h2>
-                    Twoje ogłoszenie zostało poprawnie dodane do serwisu pod
-                    ID: {newId}.
+                    Twoja transakcja została pomyślnie dodana.
                 </h2>
                 <button onClick={confirm}>OK</button>
-            </>
+            </div>
         );
     }
 
     if (updatedRows){
         return (
-            <>
+            <div className="transactionForm">
                 <h2>
                     Zaktualizowano transakcję.
                 </h2>
                 <Btn text={"OK"} to={"/"}/>
-            </>
+            </div>
         )
     }
 
 
     return (
+        <div className="transactionForm">
         <form onSubmit={saveTransaction} >
 
             <p>
@@ -217,5 +218,6 @@ export const TransactionForm = ()=>{
 
             <Btn text={form.id? "Zaktualizuj" : "Zapisz"}/>
         </form>
+        </div>
     )
 }
